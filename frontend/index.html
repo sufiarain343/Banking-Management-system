@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Bank | Premium Banking System</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="bg-overlay"></div>
+    
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-university"></i>
+                <span>Royal Bank</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" onclick="showPage('home')" class="active"><i class="fas fa-home"></i> Home</a>
+                <a href="#" onclick="showPage('accounts')"><i class="fas fa-list"></i> All Accounts</a>
+            </div>
+            <div class="time" id="currentTime"></div>
+        </nav>
+
+        <!-- Home Page -->
+        <div id="homePage" class="page active">
+            <div class="hero">
+                <h1 class="glow-text">Welcome to Royal Bank</h1>
+                <p>Secure • Reliable • Trusted Since 1999</p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <i class="fas fa-users"></i>
+                        <span id="totalAccountsHome">0</span>
+                        <small>Active Customers</small>
+                    </div>
+                    <div class="hero-stat">
+                        <i class="fas fa-rupee-sign"></i>
+                        <span id="totalBalanceHome">0</span>
+                        <small>Total Assets</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Management Team Section -->
+            <div class="management-section">
+                <h2><i class="fas fa-crown"></i> Our Leadership</h2>
+                <div class="management-grid">
+                    <div class="management-card">
+                        <i class="fas fa-user-tie"></i>
+                        <h3>Chairman</h3>
+                        <p class="name">Sufyan</p>
+                        <p class="title">Chairman of the Board</p>
+                    </div>
+                    <div class="management-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>CEO</h3>
+                        <p class="name">Maheen Irfan</p>
+                        <p class="title">Chief Executive Officer</p>
+                    </div>
+                    <div class="management-card">
+                        <i class="fas fa-coins"></i>
+                        <h3>CFO</h3>
+                        <p class="name">Simra</p>
+                        <p class="title">Chief Financial Officer</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Location Section -->
+            <div class="location-section">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Head Office: Plot #123, Banking Avenue, Karachi, Pakistan</span>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card" onclick="showAction('create')">
+                    <div class="icon"><i class="fas fa-user-plus"></i></div>
+                    <h3>Open Account</h3>
+                    <p>Start your banking journey with us</p>
+                </div>
+                <div class="service-card" onclick="showAction('deposit')">
+                    <div class="icon"><i class="fas fa-money-bill-wave"></i></div>
+                    <h3>Deposit</h3>
+                    <p>Add money to your account</p>
+                </div>
+                <div class="service-card" onclick="showAction('withdraw')">
+                    <div class="icon"><i class="fas fa-hand-holding-usd"></i></div>
+                    <h3>Withdraw</h3>
+                    <p>Withdraw cash instantly</p>
+                </div>
+                <div class="service-card" onclick="showAction('balance')">
+                    <div class="icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Check Balance</h3>
+                    <p>View your account details</p>
+                </div>
+                <div class="service-card" onclick="showAction('delete')">
+                    <div class="icon"><i class="fas fa-trash-alt"></i></div>
+                    <h3>Delete Account</h3>
+                    <p>Close your account permanently</p>
+                </div>
+                <div class="service-card" onclick="showAction('history')">
+                    <div class="icon"><i class="fas fa-history"></i></div>
+                    <h3>Transaction History</h3>
+                    <p>View all your transactions</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Page -->
+        <div id="actionPage" class="page">
+            <button class="back-btn" onclick="goBack()"><i class="fas fa-arrow-left"></i> Back</button>
+            <div id="actionContent"></div>
+        </div>
+
+        <!-- All Accounts Page -->
+        <div id="accountsPage" class="page">
+            <div class="page-header">
+                <h2><i class="fas fa-users"></i> All Accounts</h2>
+                <button class="refresh-btn" onclick="loadAllAccounts()"><i class="fas fa-sync-alt"></i> Refresh</button>
+            </div>
+            <div id="allAccountsList" class="accounts-grid"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
